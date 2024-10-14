@@ -1,0 +1,17 @@
+{
+    "name":"sprint1/tema7",
+    "description": "Debug/Testing",
+    "autoload": {
+        "psr-4": {
+            "Src\\":"src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\":"src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    }
+}
