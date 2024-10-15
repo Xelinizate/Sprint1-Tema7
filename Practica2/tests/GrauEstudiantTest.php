@@ -3,44 +3,36 @@ declare(strict_types=1);
 
 namespace Tests;
 
-require 'vendor/autoload.php';
-
 use PHPUnit\Framework\TestCase;
 use Src\GrauEstudiant;
 
 class GrauEstudiantTest extends TestCase{
 
-    public function testPrimeraDivisio(): void{
+    public $grauEstudiant;
 
-        $proba = new GrauEstudiant();
-        $nota = 75;
-        $resultatEsperado = "Primera Divisió.";
-
-        $resultat = $proba->verificaGrau($nota);
-
-        $this->assertEquals($resultatEsperado, $resultat);
-
+    protected function setUp(): void
+    {
+        $this->grauEstudiant = new GrauEstudiant();
     }
-    public function testSegonaDivisio(): void {
 
-        $proba = new GrauEstudiant();
-        $nota = 52;
-        $resultatEsperado = "Segona Divisió";
-
-        $resultat = $proba->verificaGrau($nota);
-
-        $this->assertEquals($resultatEsperado, $resultat);
-
+    protected function tearDown(): void
+    {
+        $this->grauEstudiant = null;
     }
-    public function testTerceraDivisio(): void{
+    
+    public function addNotaPorvider(): array{
 
-        $proba = new GrauEstudiant();
-        $nota = 31;
-        $resultatEsperado = "Tercera Divisió";
+        return  [[80, "Primera Divisió"],
+                [55, "Segona Divisió"],
+                [39, "Tercera Divisió"],
+                [12, "L'estudiant reprovarà"],
+                 ];
+    }
 
-        $resultat = $proba->verificaGrau($nota);
+    public function testVerificaGrau($nota, $expected){
+        $resultat = $this->grauEstudiant->verificaGrau($nota);
 
-        $this->assertEquals($resultatEsperado, $resultat);
+        $this->assertEquals($expected, $resultat);
     }
 }
 

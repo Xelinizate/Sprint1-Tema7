@@ -9,13 +9,18 @@ class NumCheckTest extends TestCase {
     private $number;
 
 
-	public function setUp(): void{
+	protected function setUp(): void{
         $this->number = new NumCheckTest(40);
     }
 
+	protected function tearDown(): void
+	{
+		$this->number = null;
+	}
 
-	public function testIsEven()  {
-		 $this->number%2 == 0;
+	protected function testIsEven()  {
+		 $resultat = $this->number%2 == 0;
+		 $this->assertEquals(8, $resultat);
 	}
 
 	public function testIsPositive() {

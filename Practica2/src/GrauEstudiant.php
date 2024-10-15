@@ -7,7 +7,7 @@ namespace Src;
 
 class GrauEstudiant{
 
-        public function verificaGrau ($nota){
+        public function verificaGrau (int $nota): string{
             
             
             if ($nota == 100 || $nota >= 60):  
