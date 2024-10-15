@@ -7,8 +7,10 @@ namespace Src;
 
 class GrauEstudiant{
 
-        function verificaGrau ($nota){
-            if ($nota == 100 || $nota >= 60):
+        public function verificaGrau ($nota){
+            
+            
+            if ($nota == 100 || $nota >= 60):  
                 return "Primera Divisió";
 
             elseif($nota <= 59 || $nota >=45):
@@ -21,6 +23,7 @@ class GrauEstudiant{
                 return "L'estudiant reprovarà";
             endif;
         }
+        
 
     }
     
