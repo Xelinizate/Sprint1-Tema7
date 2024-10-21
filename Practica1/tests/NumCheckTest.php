@@ -1,6 +1,6 @@
 <?php
 
-require 'NumberChecher.php';
+require 'NumberChecker.php';
 
 use PHPUnit\Framework\TestCase;
 
