@@ -2,6 +2,7 @@
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
     colors="true"
     stopOnFailure="false"
     displayDetailsOnTestsThatTriggerDeprecations="true"
@@ -12,10 +13,10 @@
     backupStaticProperties="false"
     cacheDirectory="qa/cache/phpunit"
     >
-    <testsuits>
-        <testsuits>
-            <directory suffix="Test.php">./tests</directory>
-        </testsuits>
+    
+    <testsuits name = "Sprint1-Tema7">
+        <directory suffix="Test.php">./tests</directory>
     </testsuits>
+    
 
 </phpunit>

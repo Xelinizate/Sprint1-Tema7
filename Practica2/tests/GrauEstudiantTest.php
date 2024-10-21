@@ -20,7 +20,7 @@ class GrauEstudiantTest extends TestCase{
         $this->grauEstudiant = null;
     }
     
-    public function addNotaPorvider(): array{
+    public static function addNotaProvider(): array{
 
         return  [[80, "Primera Divisió"],
                 [55, "Segona Divisió"],
@@ -29,11 +29,16 @@ class GrauEstudiantTest extends TestCase{
                  ];
     }
 
+    /**
+     * @dataProvider addNotaProvider
+     */
+
     public function testVerificaGrau($nota, $expected){
         $resultat = $this->grauEstudiant->verificaGrau($nota);
 
         $this->assertEquals($expected, $resultat);
     }
+    
 }
 
 ?>

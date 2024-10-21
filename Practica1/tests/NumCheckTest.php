@@ -6,29 +6,28 @@ use PHPUnit\Framework\TestCase;
 
 class NumCheckTest extends TestCase {
 
-    private $number;
+		private $numberChecker;
 
 
-	protected function setUp(): void{
-        $this->number = new NumCheckTest(40);
-    }
+		protected function setUp() : void {
+			$this->numberChecker = new NumberChecker(10);
+		}
 
-	protected function tearDown(): void
-	{
-		$this->number = null;
+		protected function tearDown(): void
+		{
+			$this->numberChecker = null;
+		}
+
+		public function testIsEven(){
+			$result = $this->numberChecker->isEven(2);
+			$this->assertEquals(true, $result);
+		}
+
+		public function testIsPositive(){
+			$result = $this->numberChecker->isPositive(4,9);
+			$this->assertEquals(true, $result);
+		}
+	
 	}
-
-	protected function testIsEven()  {
-		 $resultat = $this->number%2 == 0;
-		 $this->assertEquals(8, $resultat);
-	}
-
-	public function testIsPositive() {
-		 $result = $this->number->add(2);
-		 $this->number > 0;
-		 $this->assertEquals(0, $result);
-	}
-
-}
 ?>
 
